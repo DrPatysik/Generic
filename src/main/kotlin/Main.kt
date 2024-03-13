@@ -7,4 +7,6 @@ fun main(args: Array<String>) {
     basket.getWeight(apple.weight)
     basket.getWeight(orange.weight)
     basket.getWeight(basket.weight)
+    val fruit = orange.weight + apple.weight
+    basket.getWeight(fruit)
 }
