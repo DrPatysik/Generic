@@ -9,4 +9,10 @@ fun main(args: Array<String>) {
     basket.getWeight(basket.weight)
     val fruit = orange.weight + apple.weight
     basket.getWeight(fruit)
+
+    //корзина с фруктами
+    println( Basket.createBasketFruit(apple,orange) )
+    println( Basket.createBasketFruit(apple) )
+    println( Basket.createBasketFruit(orange) )
+
 }

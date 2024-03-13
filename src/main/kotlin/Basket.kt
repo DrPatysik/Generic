@@ -8,4 +8,14 @@ class Basket(val weight:Double = 0.0) {
         }
         return n
     }
+
+
+    companion object {
+        fun createBasketFruit(n: Fruit): Double {
+            return  n.weight
+        }
+        fun createBasketFruit(n: Fruit,m:Fruit): Double {
+            return  n.weight + m.weight
+        }
+    }
 }
