@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-    val apple = Apple()
+   /* val apple = Apple()
     val orange = Orange()
     apple.printInfo()
     orange.printInfo()
@@ -8,11 +8,33 @@ fun main(args: Array<String>) {
     basket.getWeight(orange.weight)
     basket.getWeight(basket.weight)
     val fruit = orange.weight + apple.weight
-    basket.getWeight(fruit)
+    basket.getWeight(fruit)*/
 
-    //корзина с фруктами
+    val basket1 = Basket<Fruit>()
+    basket1.addFruit(Orange())
+    basket1.addFruit(Apple())
+    basket1.addFruit(Orange())
+    basket1.addFruit(Apple())
+   // basket1.addFruit(Orange())
+
+
+
+
+    println( basket1.size() )
+    basket1.getOutFruit(Apple())
+    println( basket1.size() )
+
+
+
+
+    basket1.getWeight()
+
+   // println(basket1)
+
+
+   /* //корзина с фруктами
     println( Basket.createBasketFruit(apple,orange) )
     println( Basket.createBasketFruit(apple) )
     println( Basket.createBasketFruit(orange) )
-
+*/
 }
