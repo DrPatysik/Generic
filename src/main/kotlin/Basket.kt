@@ -44,17 +44,17 @@ class Basket<Fruit>() {
                         // myArrayFruit.removeIf { fruit == Apple() }  //нет ошибки,не удаляет
                          myArrayFruit.removeAt(myArrayFruit.indexOf(fruit))  //опять ошибку выдает (ConcurrentModificationException)
                         size-- //не срабатывает
+                         weightBasket -= Apple().weight
                          println( myArrayFruit.contains(fruit) ) //фрукты тут есть,как и должно быть
-
                      }
                      else if (element is Orange ) {
                          myArrayFruit.removeIf { fruit == Orange() }
                          println( myArrayFruit.contains(fruit) )
-
                          size--
+                         weightBasket -= Orange().weight
                      }
 
-                    }
+                 }
              }
          }
          else throw IndexOutOfBoundsException()
