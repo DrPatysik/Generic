@@ -11,23 +11,24 @@ fun main(args: Array<String>) {
     basket.getWeight(fruit)*/
 
     val basket1 = Basket<Fruit>()
-    basket1.addFruit(Orange())
     basket1.addFruit(Apple())
     basket1.addFruit(Orange())
     basket1.addFruit(Apple())
+   // basket1.addFruit(Apple())
    // basket1.addFruit(Orange())
-
-
-
-
-    println( basket1.size() )
-    basket1.getOutFruit(Apple())
-    println( basket1.size() )
-
+  //  basket1.addFruit(Orange())
+  // basket1.addFruit(Apple())
 
 
 
     basket1.getWeight()
+    println( basket1.size() )
+
+    basket1.getOutFruit(Orange())
+
+    println( basket1.size() )
+    basket1.getWeight()
+
 
    // println(basket1)
 
