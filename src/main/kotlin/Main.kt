@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
     basket1.getWeight()
     println( basket1.size() )
 
-    basket1.getOutFruit(Orange())
+    basket1.getOutFruit(Apple())
 
     println( basket1.size() )
     basket1.getWeight()
