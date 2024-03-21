@@ -21,44 +21,41 @@ class Basket<Fruit>() {
 
 
     //еще не готово
-    fun getOutFruit( vararg elements:Fruit)
-     {
-        //это все было без vararg ,если удалять только 1 элемент
-       /* myArrayFruit.removeAt(0) //так работает,удаляет элемент и уменьшается список
+    fun getOutFruit( vararg elements:Fruit) =
+    //это все было без vararg ,если удалять только 1 элемент
+        /* myArrayFruit.removeAt(0) //так работает,удаляет элемент и уменьшается список
 
-      println( myArrayFruit.contains(elements) )  //тут выяснила,что в списке у меня не содержится elements
+       println( myArrayFruit.contains(elements) )  //тут выяснила,что в списке у меня не содержится elements
 
-         if (myArrayFruit.size > 0) {
-            myArrayFruit.removeIf { elements == Orange() } // нет ошибки,но не удаляет
-            myArrayFruit.removeAt(myArrayFruit.indexOf(elements)) // выдает ошибку,так как в списке не видит добавленные элементы
-            myArrayFruit.remove(elements)  // выдает ошибку,причина как выше
-            myArrayFruit.lastIndexOf(elements)  // тоже ошибка
-        } else throw IndexOutOfBoundsException()
+          if (myArrayFruit.size > 0) {
+             myArrayFruit.removeIf { elements == Orange() } // нет ошибки,но не удаляет
+             myArrayFruit.removeAt(myArrayFruit.indexOf(elements)) // выдает ошибку,так как в списке не видит добавленные элементы
+             myArrayFruit.remove(elements)  // выдает ошибку,причина как выше
+             myArrayFruit.lastIndexOf(elements)  // тоже ошибка
+         } else throw IndexOutOfBoundsException()
 
-        myArrayFruit.forEach { i -> println(i) }*/
-
-         if (myArrayFruit.size > 0) {
-             for (element in elements) {
-                 for (fruit in myArrayFruit) {
-                     if (element is Apple == fruit is Apple ) {
-                        // myArrayFruit.removeIf { fruit == Apple() }  //нет ошибки,не удаляет
-                         myArrayFruit.removeAt(myArrayFruit.indexOf(fruit))  //опять ошибку выдает (ConcurrentModificationException)
+         myArrayFruit.forEach { i -> println(i) }*/
+        if (myArrayFruit.size > 0) {
+            for (element in elements) {
+                for (fruit in myArrayFruit) {
+                    if (element is Apple == fruit is Apple ) {
+                        myArrayFruit.removeIf { fruit-> fruit == Apple() }  //нет ошибки,не удаляет
+                        //  myArrayFruit.removeAt(myArrayFruit.indexOf(fruit))  //опять ошибку выдает (ConcurrentModificationException)
                         size-- //не срабатывает
-                         weightBasket -= Apple().weight
-                         println( myArrayFruit.contains(fruit) ) //фрукты тут есть,как и должно быть
-                     }
-                     else if (element is Orange ) {
-                         myArrayFruit.removeIf { fruit == Orange() }
-                         println( myArrayFruit.contains(fruit) )
-                         size--
-                         weightBasket -= Orange().weight
-                     }
+                        weightBasket -= Apple().weight
+                        println( myArrayFruit.contains(fruit) ) //фрукты тут есть,как и должно быть
+                    }
+                    else if (element is Orange == fruit is Orange ) {
+                        myArrayFruit.removeIf { fruit-> fruit == Orange() }
+                        println( myArrayFruit.contains(fruit) )
+                        size--
+                        weightBasket -= Orange().weight
+                    }
 
-                 }
-             }
-         }
-         else throw IndexOutOfBoundsException()
-    }
+                }
+            }
+        }
+        else throw IndexOutOfBoundsException()
 
 
     fun getWeight() {
