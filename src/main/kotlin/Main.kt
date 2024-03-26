@@ -12,8 +12,9 @@ fun main(args: Array<String>) {
 
     basket1.getOutFruit(Apple())
     basket1.getOutFruit(Apple())
-   basket1.getOutFruit(Orange())
-   basket1.getOutFruit(Orange())
+    basket1.getOutSomeFruits(Orange(), Apple(),Orange())
+    //basket1.getOutFruit(Orange())
+    //basket1.getOutFruit(Orange())
 
     //println( basket1.size() )
     basket1.printWeight()

@@ -38,6 +38,12 @@ class Basket<Fruit>() {
             }
         }
     }
+        //добавила удаление нескольких фруктов
+    fun getOutSomeFruits( vararg elements:Fruit) {
+        for (element in elements){
+            getOutFruit(element)
+        }
+    }
 
     fun printWeight() {
         println("Weight of the basket is $weightBasket")
