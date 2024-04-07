@@ -56,20 +56,21 @@ fun main(args: Array<String>) {
 
 fun bubbleSortDescendingNumbers(collection :ArrayList<Int> )  {
     var bigger:Int
-    var checkCollection:ArrayList<Int>
-    var sort = false
 
-    while (!sort) {
-        sort = true
+   do{
+         var sort = true
+         for (index in 0..<(collection.size - 1)) {
+            val currentNumber = collection[index]
+             val nextNumber = collection[index + 1]
 
-        for (index in 0..<(collection.size - 1)) {
-            if (collection[index + 1] > collection[index] ) {
-                bigger = collection[index + 1]
-                collection[index + 1] = collection[index]
+            if ( nextNumber > currentNumber  ) {
+                bigger = nextNumber
+                collection[index + 1] = currentNumber  // Почему сработало только,когда подставила
+                // обращение к коллекции с индексом?
                 collection[index] = bigger
                 sort = false
             }
         }
-
-    }
+     }
+     while (!sort)
 }
